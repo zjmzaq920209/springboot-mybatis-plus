@@ -1,12 +1,16 @@
 package com.example.springboottest.config;
 
 import com.example.springboottest.callback.MsgSendConfirmCallBack;
+import com.rabbitmq.client.Channel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * rabbitMQ配置
  */
+@Slf4j
 @Configuration
 public class RabbitMqConfig {
     /**
@@ -63,17 +68,37 @@ public class RabbitMqConfig {
      * 当有消息到达时会通知监听在对应的队列上的监听对象
      * @return
      */
-   /* @Bean
-    public SimpleMessageListenerContainer simpleMessageListenerContainer_one(){
-        SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer(connectionFactory);
-        simpleMessageListenerContainer.addQueues(queueConfig.firstQueue());
-        simpleMessageListenerContainer.setExposeListenerChannel(true);
-        simpleMessageListenerContainer.setMaxConcurrentConsumers(5);
-        simpleMessageListenerContainer.setConcurrentConsumers(1);
-        simpleMessageListenerContainer.setAcknowledgeMode(AcknowledgeMode.MANUAL); //设置确认模式手工确认
-        return simpleMessageListenerContainer;
-    }*/
-
+    @Bean
+    public SimpleMessageListenerContainer messageContainer() {
+        //加载处理消息A的队列
+        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
+        //设置接收多个队列里面的消息，这里设置接收队列A
+        //假如想一个消费者处理多个队列里面的信息可以如下设置：
+        //container.setQueues(queueA(),queueB(),queueC());
+        //container.setQueues(firstQueue());
+        container.setQueues(queueConfig.firstQueue(), queueConfig.secondQueue());
+        container.setExposeListenerChannel(true);
+        //设置最大的并发的消费者数量
+        container.setMaxConcurrentConsumers(10);
+        //最小的并发消费者的数量
+        container.setConcurrentConsumers(1);
+        //设置确认模式手工确认
+        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        container.setMessageListener(new ChannelAwareMessageListener() {
+            @Override
+            public void onMessage(Message message, Channel channel) throws Exception {
+                /**通过basic.qos方法设置prefetch_count=1，这样RabbitMQ就会使得每个Consumer在同一个时间点最多处理一个Message，
+                 换句话说,在接收到该Consumer的ack前,它不会将新的Message分发给它 */
+                channel.basicQos(1);
+                byte[] body = message.getBody();
+                log.info("接收处理队列A当中的消息:" + new String(body));
+                /**为了保证永远不会丢失消息，RabbitMQ支持消息应答机制。
+                 当消费者接收到消息并完成任务后会往RabbitMQ服务器发送一条确认的命令，然后RabbitMQ才会将消息删除。*/
+                channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+            }
+        });
+        return container;
+    }
     /**
      * 定义rabbit template用于数据的接收和发送
      * @return
@@ -92,7 +117,7 @@ public class RabbitMqConfig {
          * 可针对每次请求的消息去确定’mandatory’的boolean值，
          * 只能在提供’return -callback’时使用，与mandatory互斥
          */
-        //  template.setMandatory(true);
+          //template.setMandatory(true);
         return template;
     }
 

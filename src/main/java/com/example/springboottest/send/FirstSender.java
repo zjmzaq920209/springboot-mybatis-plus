@@ -21,7 +21,7 @@ public class FirstSender {
      */
     public void send(String uuid,Object message) {
         CorrelationData correlationId = new CorrelationData(uuid);
-        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, RabbitMqConfig.ROUTINGKEY2,
+        this.rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, RabbitMqConfig.ROUTINGKEY1,
                 message, correlationId);
     }
 
