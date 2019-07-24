@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboottest.dao.DataTransactionDao">
+
+    <resultMap type="com.example.springboottest.entity.DataTransaction" id="DataTransactionMap">
+        <result property="netno" column="NETNO" jdbcType="VARCHAR"/>
+        <result property="siteno" column="SITENO" jdbcType="VARCHAR"/>
+        <result property="laneno" column="LANENO" jdbcType="VARCHAR"/>
+        <result property="lanetype" column="LANETYPE" jdbcType="VARCHAR"/>
+        <result property="lanemode" column="LANEMODE" jdbcType="VARCHAR"/>
+        <result property="cetc" column="CETC" jdbcType="VARCHAR"/>
+        <result property="jobno" column="JOBNO" jdbcType="VARCHAR"/>
+        <result property="jobbegin" column="JOBBEGIN" jdbcType="TIMESTAMP"/>
+        <result property="squadno" column="SQUADNO" jdbcType="VARCHAR"/>
+        <result property="staffno" column="STAFFNO" jdbcType="VARCHAR"/>
+        <result property="staffname" column="STAFFNAME" jdbcType="VARCHAR"/>
+        <result property="transactiondate" column="TRANSACTIONDATE" jdbcType="TIMESTAMP"/>
+        <result property="transactionno" column="TRANSACTIONNO" jdbcType="VARCHAR"/>
+        <result property="indxno" column="INDXNO" jdbcType="VARCHAR"/>
+        <result property="obstcsc" column="OBSTCSC" jdbcType="VARCHAR"/>
+        <result property="obsmop" column="OBSMOP" jdbcType="VARCHAR"/>
+        <result property="obssequence" column="OBSSEQUENCE" jdbcType="VARCHAR"/>
+        <result property="obspassage" column="OBSPASSAGE" jdbcType="VARCHAR"/>
+        <result property="classno" column="CLASSNO" jdbcType="VARCHAR"/>
+        <result property="farenetno" column="FARENETNO" jdbcType="VARCHAR"/>
+        <result property="faresiteno" column="FARESITENO" jdbcType="VARCHAR"/>
+        <result property="entrynetno" column="ENTRYNETNO" jdbcType="VARCHAR"/>
+        <result property="entrysiteno" column="ENTRYSITENO" jdbcType="VARCHAR"/>
+        <result property="entrylanetype" column="ENTRYLANETYPE" jdbcType="VARCHAR"/>
+        <result property="entrylaneno" column="ENTRYLANENO" jdbcType="VARCHAR"/>
+        <result property="entrystaffno" column="ENTRYSTAFFNO" jdbcType="VARCHAR"/>
+        <result property="entryclassno" column="ENTRYCLASSNO" jdbcType="VARCHAR"/>
+        <result property="entryvehicleplate" column="ENTRYVEHICLEPLATE" jdbcType="VARCHAR"/>
+        <result property="entrydate" column="ENTRYDATE" jdbcType="TIMESTAMP"/>
+        <result property="entryjobno" column="ENTRYJOBNO" jdbcType="VARCHAR"/>
+        <result property="entrymopno" column="ENTRYMOPNO" jdbcType="VARCHAR"/>
+        <result property="mopno" column="MOPNO" jdbcType="VARCHAR"/>
+        <result property="ticketno" column="TICKETNO" jdbcType="VARCHAR"/>
+        <result property="faretblversion" column="FARETBLVERSION" jdbcType="VARCHAR"/>
+        <result property="prixtotal" column="PRIXTOTAL" jdbcType="NUMERIC"/>
+        <result property="prixpartial" column="PRIXPARTIAL" jdbcType="NUMERIC"/>
+        <result property="mopdetail" column="MOPDETAIL" jdbcType="VARCHAR"/>
+        <result property="codeoctal" column="CODEOCTAL" jdbcType="VARCHAR"/>
+        <result property="tcscno" column="TCSCNO" jdbcType="VARCHAR"/>
+        <result property="tcscversion" column="TCSCVERSION" jdbcType="VARCHAR"/>
+        <result property="cartridgeno" column="CARTRIDGENO" jdbcType="VARCHAR"/>
+        <result property="tcscorderno" column="TCSCORDERNO" jdbcType="VARCHAR"/>
+        <result property="cartridgecycleno" column="CARTRIDGECYCLENO" jdbcType="VARCHAR"/>
+        <result property="paycscno" column="PAYCSCNO" jdbcType="VARCHAR"/>
+        <result property="exitvehicleplate" column="EXITVEHICLEPLATE" jdbcType="VARCHAR"/>
+        <result property="parvehicleplate" column="PARVEHICLEPLATE" jdbcType="VARCHAR"/>
+        <result property="processtype" column="PROCESSTYPE" jdbcType="VARCHAR"/>
+        <result property="coverweight" column="COVERWEIGHT" jdbcType="VARCHAR"/>
+        <result property="invoicetype" column="INVOICETYPE" jdbcType="VARCHAR"/>
+        <result property="equipstatus" column="EQUIPSTATUS" jdbcType="VARCHAR"/>
+        <result property="cflag" column="CFLAG" jdbcType="VARCHAR"/>
+        <result property="fareclassno" column="FARECLASSNO" jdbcType="VARCHAR"/>
+        <result property="shiftno" column="SHIFTNO" jdbcType="VARCHAR"/>
+        <result property="imagefile" column="IMAGEFILE" jdbcType="VARCHAR"/>
+        <result property="routeno" column="ROUTENO" jdbcType="VARCHAR"/>
+        <result property="fareaxles" column="FAREAXLES" jdbcType="NUMERIC"/>
+        <result property="detectweight" column="DETECTWEIGHT" jdbcType="NUMERIC"/>
+        <result property="overweight" column="OVERWEIGHT" jdbcType="NUMERIC"/>
+        <result property="overweighttype" column="OVERWEIGHTTYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxles" column="ENTRYAXLES" jdbcType="VARCHAR"/>
+        <result property="entryweight" column="ENTRYWEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryoverweight" column="ENTRYOVERWEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryoverweighttype" column="ENTRYOVERWEIGHTTYPE" jdbcType="VARCHAR"/>
+        <result property="entryparvehicleplate" column="ENTRYPARVEHICLEPLATE" jdbcType="VARCHAR"/>
+        <result property="picturecomment" column="PICTURECOMMENT" jdbcType="VARCHAR"/>
+        <result property="picturecomment2" column="PICTURECOMMENT2" jdbcType="VARCHAR"/>
+        <result property="weightmode" column="WEIGHTMODE" jdbcType="VARCHAR"/>
+        <result property="parvehicleplatecolor" column="PARVEHICLEPLATECOLOR" jdbcType="VARCHAR"/>
+        <result property="distance" column="DISTANCE" jdbcType="NUMERIC"/>
+        <result property="computerate" column="COMPUTERATE" jdbcType="NUMERIC"/>
+        <result property="fareweight" column="FAREWEIGHT" jdbcType="NUMERIC"/>
+        <result property="overweightfare" column="OVERWEIGHTFARE" jdbcType="NUMERIC"/>
+        <result property="axlegroups" column="AXLEGROUPS" jdbcType="NUMERIC"/>
+        <result property="axlegroup1type" column="AXLEGROUP1TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup1weight" column="AXLEGROUP1WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup2type" column="AXLEGROUP2TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup2weight" column="AXLEGROUP2WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup3type" column="AXLEGROUP3TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup3weight" column="AXLEGROUP3WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup4type" column="AXLEGROUP4TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup4weight" column="AXLEGROUP4WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup5type" column="AXLEGROUP5TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup5weight" column="AXLEGROUP5WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup6type" column="AXLEGROUP6TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup6weight" column="AXLEGROUP6WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup7type" column="AXLEGROUP7TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup7weight" column="AXLEGROUP7WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup8type" column="AXLEGROUP8TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup8weight" column="AXLEGROUP8WEIGHT" jdbcType="NUMERIC"/>
+        <result property="axlegroup9type" column="AXLEGROUP9TYPE" jdbcType="VARCHAR"/>
+        <result property="axlegroup9weight" column="AXLEGROUP9WEIGHT" jdbcType="NUMERIC"/>
+        <result property="speed" column="SPEED" jdbcType="NUMERIC"/>
+        <result property="acceleration" column="ACCELERATION" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup1type" column="FAREAXLEGROUP1TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup2type" column="FAREAXLEGROUP2TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup3type" column="FAREAXLEGROUP3TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup4type" column="FAREAXLEGROUP4TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup5type" column="FAREAXLEGROUP5TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup6type" column="FAREAXLEGROUP6TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup7type" column="FAREAXLEGROUP7TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup8type" column="FAREAXLEGROUP8TYPE" jdbcType="VARCHAR"/>
+        <result property="fareaxlegroup9type" column="FAREAXLEGROUP9TYPE" jdbcType="VARCHAR"/>
+        <result property="weightddhm" column="WEIGHTDDHM" jdbcType="TIMESTAMP"/>
+        <result property="entryaxlegroups" column="ENTRYAXLEGROUPS" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup1type" column="ENTRYAXLEGROUP1TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup2type" column="ENTRYAXLEGROUP2TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup3type" column="ENTRYAXLEGROUP3TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup4type" column="ENTRYAXLEGROUP4TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup5type" column="ENTRYAXLEGROUP5TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup6type" column="ENTRYAXLEGROUP6TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup7type" column="ENTRYAXLEGROUP7TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup8type" column="ENTRYAXLEGROUP8TYPE" jdbcType="VARCHAR"/>
+        <result property="entryaxlegroup9type" column="ENTRYAXLEGROUP9TYPE" jdbcType="VARCHAR"/>
+        <result property="picturecommenttype" column="PICTURECOMMENTTYPE" jdbcType="VARCHAR"/>
+        <result property="detectaxles" column="DETECTAXLES" jdbcType="NUMERIC"/>
+        <result property="isoverload" column="ISOVERLOAD" jdbcType="VARCHAR"/>
+        <result property="isspecialtrunk" column="ISSPECIALTRUNK" jdbcType="VARCHAR"/>
+        <result property="limitweight" column="LIMITWEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup1weight" column="FAREAXLEGROUP1WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup2weight" column="FAREAXLEGROUP2WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup3weight" column="FAREAXLEGROUP3WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup4weight" column="FAREAXLEGROUP4WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup5weight" column="FAREAXLEGROUP5WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup6weight" column="FAREAXLEGROUP6WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup7weight" column="FAREAXLEGROUP7WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup8weight" column="FAREAXLEGROUP8WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroup9weight" column="FAREAXLEGROUP9WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup1weight" column="ENTRYAXLEGROUP1WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup2weight" column="ENTRYAXLEGROUP2WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup3weight" column="ENTRYAXLEGROUP3WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup4weight" column="ENTRYAXLEGROUP4WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup5weight" column="ENTRYAXLEGROUP5WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup6weight" column="ENTRYAXLEGROUP6WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup7weight" column="ENTRYAXLEGROUP7WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup8weight" column="ENTRYAXLEGROUP8WEIGHT" jdbcType="NUMERIC"/>
+        <result property="entryaxlegroup9weight" column="ENTRYAXLEGROUP9WEIGHT" jdbcType="NUMERIC"/>
+        <result property="fareaxlegroups" column="FAREAXLEGROUPS" jdbcType="NUMERIC"/>
+        <result property="discountfare" column="DISCOUNTFARE" jdbcType="NUMERIC"/>
+        <result property="cpucardnetwork" column="CPUCARDNETWORK" jdbcType="VARCHAR"/>
+        <result property="cpucardno" column="CPUCARDNO" jdbcType="VARCHAR"/>
+        <result property="cpucardtype" column="CPUCARDTYPE" jdbcType="VARCHAR"/>
+        <result property="flagstanum" column="FLAGSTANUM" jdbcType="NUMERIC"/>
+        <result property="flagsta" column="FLAGSTA" jdbcType="VARCHAR"/>
+        <result property="byField1" column="BY_FIELD1" jdbcType="NUMERIC"/>
+        <result property="qrtransid" column="QRTRANSID" jdbcType="VARCHAR"/>
+        <result property="qrpayfare" column="QRPAYFARE" jdbcType="VARCHAR"/>
+        <result property="qrpaytype" column="QRPAYTYPE" jdbcType="VARCHAR"/>
+        <result property="cflag1" column="CFLAG1" jdbcType="VARCHAR"/>
+        <result property="cflag2" column="CFLAG2" jdbcType="VARCHAR"/>
+        <result property="uploadflag" column="UPLOADFLAG" jdbcType="VARCHAR"/>
+        <result property="cflag3" column="CFLAG3" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="DataTransactionMap">
+        select
+          NETNO, SITENO, LANENO, LANETYPE, LANEMODE, CETC, JOBNO, JOBBEGIN, SQUADNO, STAFFNO, STAFFNAME, TRANSACTIONDATE, TRANSACTIONNO, INDXNO, OBSTCSC, OBSMOP, OBSSEQUENCE, OBSPASSAGE, CLASSNO, FARENETNO, FARESITENO, ENTRYNETNO, ENTRYSITENO, ENTRYLANETYPE, ENTRYLANENO, ENTRYSTAFFNO, ENTRYCLASSNO, ENTRYVEHICLEPLATE, ENTRYDATE, ENTRYJOBNO, ENTRYMOPNO, MOPNO, TICKETNO, FARETBLVERSION, PRIXTOTAL, PRIXPARTIAL, MOPDETAIL, CODEOCTAL, TCSCNO, TCSCVERSION, CARTRIDGENO, TCSCORDERNO, CARTRIDGECYCLENO, PAYCSCNO, EXITVEHICLEPLATE, PARVEHICLEPLATE, PROCESSTYPE, COVERWEIGHT, INVOICETYPE, EQUIPSTATUS, CFLAG, FARECLASSNO, SHIFTNO, IMAGEFILE, ROUTENO, FAREAXLES, DETECTWEIGHT, OVERWEIGHT, OVERWEIGHTTYPE, ENTRYAXLES, ENTRYWEIGHT, ENTRYOVERWEIGHT, ENTRYOVERWEIGHTTYPE, ENTRYPARVEHICLEPLATE, PICTURECOMMENT, PICTURECOMMENT2, WEIGHTMODE, PARVEHICLEPLATECOLOR, DISTANCE, COMPUTERATE, FAREWEIGHT, OVERWEIGHTFARE, AXLEGROUPS, AXLEGROUP1TYPE, AXLEGROUP1WEIGHT, AXLEGROUP2TYPE, AXLEGROUP2WEIGHT, AXLEGROUP3TYPE, AXLEGROUP3WEIGHT, AXLEGROUP4TYPE, AXLEGROUP4WEIGHT, AXLEGROUP5TYPE, AXLEGROUP5WEIGHT, AXLEGROUP6TYPE, AXLEGROUP6WEIGHT, AXLEGROUP7TYPE, AXLEGROUP7WEIGHT, AXLEGROUP8TYPE, AXLEGROUP8WEIGHT, AXLEGROUP9TYPE, AXLEGROUP9WEIGHT, SPEED, ACCELERATION, FAREAXLEGROUP1TYPE, FAREAXLEGROUP2TYPE, FAREAXLEGROUP3TYPE, FAREAXLEGROUP4TYPE, FAREAXLEGROUP5TYPE, FAREAXLEGROUP6TYPE, FAREAXLEGROUP7TYPE, FAREAXLEGROUP8TYPE, FAREAXLEGROUP9TYPE, WEIGHTDDHM, ENTRYAXLEGROUPS, ENTRYAXLEGROUP1TYPE, ENTRYAXLEGROUP2TYPE, ENTRYAXLEGROUP3TYPE, ENTRYAXLEGROUP4TYPE, ENTRYAXLEGROUP5TYPE, ENTRYAXLEGROUP6TYPE, ENTRYAXLEGROUP7TYPE, ENTRYAXLEGROUP8TYPE, ENTRYAXLEGROUP9TYPE, PICTURECOMMENTTYPE, DETECTAXLES, ISOVERLOAD, ISSPECIALTRUNK, LIMITWEIGHT, FAREAXLEGROUP1WEIGHT, FAREAXLEGROUP2WEIGHT, FAREAXLEGROUP3WEIGHT, FAREAXLEGROUP4WEIGHT, FAREAXLEGROUP5WEIGHT, FAREAXLEGROUP6WEIGHT, FAREAXLEGROUP7WEIGHT, FAREAXLEGROUP8WEIGHT, FAREAXLEGROUP9WEIGHT, ENTRYAXLEGROUP1WEIGHT, ENTRYAXLEGROUP2WEIGHT, ENTRYAXLEGROUP3WEIGHT, ENTRYAXLEGROUP4WEIGHT, ENTRYAXLEGROUP5WEIGHT, ENTRYAXLEGROUP6WEIGHT, ENTRYAXLEGROUP7WEIGHT, ENTRYAXLEGROUP8WEIGHT, ENTRYAXLEGROUP9WEIGHT, FAREAXLEGROUPS, DISCOUNTFARE, CPUCARDNETWORK, CPUCARDNO, CPUCARDTYPE, FLAGSTANUM, FLAGSTA, BY_FIELD1, QRTRANSID, QRPAYFARE, QRPAYTYPE, CFLAG1, CFLAG2, UPLOADFLAG, CFLAG3
+        from XZTOLLSTATION.DATA_TRANSACTION
+        where NETNO = #{netno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DataTransactionMap">
+        <![CDATA[
+        select
+          *
+        from
+            (select
+              ROWNUM AS ROWNO, NETNO, SITENO, LANENO, LANETYPE, LANEMODE, CETC, JOBNO, JOBBEGIN, SQUADNO, STAFFNO, STAFFNAME, TRANSACTIONDATE, TRANSACTIONNO, INDXNO, OBSTCSC, OBSMOP, OBSSEQUENCE, OBSPASSAGE, CLASSNO, FARENETNO, FARESITENO, ENTRYNETNO, ENTRYSITENO, ENTRYLANETYPE, ENTRYLANENO, ENTRYSTAFFNO, ENTRYCLASSNO, ENTRYVEHICLEPLATE, ENTRYDATE, ENTRYJOBNO, ENTRYMOPNO, MOPNO, TICKETNO, FARETBLVERSION, PRIXTOTAL, PRIXPARTIAL, MOPDETAIL, CODEOCTAL, TCSCNO, TCSCVERSION, CARTRIDGENO, TCSCORDERNO, CARTRIDGECYCLENO, PAYCSCNO, EXITVEHICLEPLATE, PARVEHICLEPLATE, PROCESSTYPE, COVERWEIGHT, INVOICETYPE, EQUIPSTATUS, CFLAG, FARECLASSNO, SHIFTNO, IMAGEFILE, ROUTENO, FAREAXLES, DETECTWEIGHT, OVERWEIGHT, OVERWEIGHTTYPE, ENTRYAXLES, ENTRYWEIGHT, ENTRYOVERWEIGHT, ENTRYOVERWEIGHTTYPE, ENTRYPARVEHICLEPLATE, PICTURECOMMENT, PICTURECOMMENT2, WEIGHTMODE, PARVEHICLEPLATECOLOR, DISTANCE, COMPUTERATE, FAREWEIGHT, OVERWEIGHTFARE, AXLEGROUPS, AXLEGROUP1TYPE, AXLEGROUP1WEIGHT, AXLEGROUP2TYPE, AXLEGROUP2WEIGHT, AXLEGROUP3TYPE, AXLEGROUP3WEIGHT, AXLEGROUP4TYPE, AXLEGROUP4WEIGHT, AXLEGROUP5TYPE, AXLEGROUP5WEIGHT, AXLEGROUP6TYPE, AXLEGROUP6WEIGHT, AXLEGROUP7TYPE, AXLEGROUP7WEIGHT, AXLEGROUP8TYPE, AXLEGROUP8WEIGHT, AXLEGROUP9TYPE, AXLEGROUP9WEIGHT, SPEED, ACCELERATION, FAREAXLEGROUP1TYPE, FAREAXLEGROUP2TYPE, FAREAXLEGROUP3TYPE, FAREAXLEGROUP4TYPE, FAREAXLEGROUP5TYPE, FAREAXLEGROUP6TYPE, FAREAXLEGROUP7TYPE, FAREAXLEGROUP8TYPE, FAREAXLEGROUP9TYPE, WEIGHTDDHM, ENTRYAXLEGROUPS, ENTRYAXLEGROUP1TYPE, ENTRYAXLEGROUP2TYPE, ENTRYAXLEGROUP3TYPE, ENTRYAXLEGROUP4TYPE, ENTRYAXLEGROUP5TYPE, ENTRYAXLEGROUP6TYPE, ENTRYAXLEGROUP7TYPE, ENTRYAXLEGROUP8TYPE, ENTRYAXLEGROUP9TYPE, PICTURECOMMENTTYPE, DETECTAXLES, ISOVERLOAD, ISSPECIALTRUNK, LIMITWEIGHT, FAREAXLEGROUP1WEIGHT, FAREAXLEGROUP2WEIGHT, FAREAXLEGROUP3WEIGHT, FAREAXLEGROUP4WEIGHT, FAREAXLEGROUP5WEIGHT, FAREAXLEGROUP6WEIGHT, FAREAXLEGROUP7WEIGHT, FAREAXLEGROUP8WEIGHT, FAREAXLEGROUP9WEIGHT, ENTRYAXLEGROUP1WEIGHT, ENTRYAXLEGROUP2WEIGHT, ENTRYAXLEGROUP3WEIGHT, ENTRYAXLEGROUP4WEIGHT, ENTRYAXLEGROUP5WEIGHT, ENTRYAXLEGROUP6WEIGHT, ENTRYAXLEGROUP7WEIGHT, ENTRYAXLEGROUP8WEIGHT, ENTRYAXLEGROUP9WEIGHT, FAREAXLEGROUPS, DISCOUNTFARE, CPUCARDNETWORK, CPUCARDNO, CPUCARDTYPE, FLAGSTANUM, FLAGSTA, BY_FIELD1, QRTRANSID, QRPAYFARE, QRPAYTYPE, CFLAG1, CFLAG2, UPLOADFLAG, CFLAG3
+            from XZTOLLSTATION.DATA_TRANSACTION
+            where ROWNUM <= #{offset}) TABLE_ALIAS
+        WHERE TABLE_ALIAS.ROWNO >= #{limit}
+        ]]>
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DataTransactionMap">
+        select
+          NETNO, SITENO, LANENO, LANETYPE, LANEMODE, CETC, JOBNO, JOBBEGIN, SQUADNO, STAFFNO, STAFFNAME, TRANSACTIONDATE, TRANSACTIONNO, INDXNO, OBSTCSC, OBSMOP, OBSSEQUENCE, OBSPASSAGE, CLASSNO, FARENETNO, FARESITENO, ENTRYNETNO, ENTRYSITENO, ENTRYLANETYPE, ENTRYLANENO, ENTRYSTAFFNO, ENTRYCLASSNO, ENTRYVEHICLEPLATE, ENTRYDATE, ENTRYJOBNO, ENTRYMOPNO, MOPNO, TICKETNO, FARETBLVERSION, PRIXTOTAL, PRIXPARTIAL, MOPDETAIL, CODEOCTAL, TCSCNO, TCSCVERSION, CARTRIDGENO, TCSCORDERNO, CARTRIDGECYCLENO, PAYCSCNO, EXITVEHICLEPLATE, PARVEHICLEPLATE, PROCESSTYPE, COVERWEIGHT, INVOICETYPE, EQUIPSTATUS, CFLAG, FARECLASSNO, SHIFTNO, IMAGEFILE, ROUTENO, FAREAXLES, DETECTWEIGHT, OVERWEIGHT, OVERWEIGHTTYPE, ENTRYAXLES, ENTRYWEIGHT, ENTRYOVERWEIGHT, ENTRYOVERWEIGHTTYPE, ENTRYPARVEHICLEPLATE, PICTURECOMMENT, PICTURECOMMENT2, WEIGHTMODE, PARVEHICLEPLATECOLOR, DISTANCE, COMPUTERATE, FAREWEIGHT, OVERWEIGHTFARE, AXLEGROUPS, AXLEGROUP1TYPE, AXLEGROUP1WEIGHT, AXLEGROUP2TYPE, AXLEGROUP2WEIGHT, AXLEGROUP3TYPE, AXLEGROUP3WEIGHT, AXLEGROUP4TYPE, AXLEGROUP4WEIGHT, AXLEGROUP5TYPE, AXLEGROUP5WEIGHT, AXLEGROUP6TYPE, AXLEGROUP6WEIGHT, AXLEGROUP7TYPE, AXLEGROUP7WEIGHT, AXLEGROUP8TYPE, AXLEGROUP8WEIGHT, AXLEGROUP9TYPE, AXLEGROUP9WEIGHT, SPEED, ACCELERATION, FAREAXLEGROUP1TYPE, FAREAXLEGROUP2TYPE, FAREAXLEGROUP3TYPE, FAREAXLEGROUP4TYPE, FAREAXLEGROUP5TYPE, FAREAXLEGROUP6TYPE, FAREAXLEGROUP7TYPE, FAREAXLEGROUP8TYPE, FAREAXLEGROUP9TYPE, WEIGHTDDHM, ENTRYAXLEGROUPS, ENTRYAXLEGROUP1TYPE, ENTRYAXLEGROUP2TYPE, ENTRYAXLEGROUP3TYPE, ENTRYAXLEGROUP4TYPE, ENTRYAXLEGROUP5TYPE, ENTRYAXLEGROUP6TYPE, ENTRYAXLEGROUP7TYPE, ENTRYAXLEGROUP8TYPE, ENTRYAXLEGROUP9TYPE, PICTURECOMMENTTYPE, DETECTAXLES, ISOVERLOAD, ISSPECIALTRUNK, LIMITWEIGHT, FAREAXLEGROUP1WEIGHT, FAREAXLEGROUP2WEIGHT, FAREAXLEGROUP3WEIGHT, FAREAXLEGROUP4WEIGHT, FAREAXLEGROUP5WEIGHT, FAREAXLEGROUP6WEIGHT, FAREAXLEGROUP7WEIGHT, FAREAXLEGROUP8WEIGHT, FAREAXLEGROUP9WEIGHT, ENTRYAXLEGROUP1WEIGHT, ENTRYAXLEGROUP2WEIGHT, ENTRYAXLEGROUP3WEIGHT, ENTRYAXLEGROUP4WEIGHT, ENTRYAXLEGROUP5WEIGHT, ENTRYAXLEGROUP6WEIGHT, ENTRYAXLEGROUP7WEIGHT, ENTRYAXLEGROUP8WEIGHT, ENTRYAXLEGROUP9WEIGHT, FAREAXLEGROUPS, DISCOUNTFARE, CPUCARDNETWORK, CPUCARDNO, CPUCARDTYPE, FLAGSTANUM, FLAGSTA, BY_FIELD1, QRTRANSID, QRPAYFARE, QRPAYTYPE, CFLAG1, CFLAG2, UPLOADFLAG, CFLAG3
+        from XZTOLLSTATION.DATA_TRANSACTION
+        <where>
+            <if test="netno != null and netno != ''">
+                and NETNO = #{netno}
+            </if>
+            <if test="siteno != null and siteno != ''">
+                and SITENO = #{siteno}
+            </if>
+            <if test="laneno != null and laneno != ''">
+                and LANENO = #{laneno}
+            </if>
+            <if test="lanetype != null and lanetype != ''">
+                and LANETYPE = #{lanetype}
+            </if>
+            <if test="lanemode != null and lanemode != ''">
+                and LANEMODE = #{lanemode}
+            </if>
+            <if test="cetc != null and cetc != ''">
+                and CETC = #{cetc}
+            </if>
+            <if test="jobno != null and jobno != ''">
+                and JOBNO = #{jobno}
+            </if>
+            <if test="jobbegin != null">
+                and JOBBEGIN = #{jobbegin}
+            </if>
+            <if test="squadno != null and squadno != ''">
+                and SQUADNO = #{squadno}
+            </if>
+            <if test="staffno != null and staffno != ''">
+                and STAFFNO = #{staffno}
+            </if>
+            <if test="staffname != null and staffname != ''">
+                and STAFFNAME = #{staffname}
+            </if>
+            <if test="transactiondate != null">
+                and TRANSACTIONDATE = #{transactiondate}
+            </if>
+            <if test="transactionno != null and transactionno != ''">
+                and TRANSACTIONNO = #{transactionno}
+            </if>
+            <if test="indxno != null and indxno != ''">
+                and INDXNO = #{indxno}
+            </if>
+            <if test="obstcsc != null and obstcsc != ''">
+                and OBSTCSC = #{obstcsc}
+            </if>
+            <if test="obsmop != null and obsmop != ''">
+                and OBSMOP = #{obsmop}
+            </if>
+            <if test="obssequence != null and obssequence != ''">
+                and OBSSEQUENCE = #{obssequence}
+            </if>
+            <if test="obspassage != null and obspassage != ''">
+                and OBSPASSAGE = #{obspassage}
+            </if>
+            <if test="classno != null and classno != ''">
+                and CLASSNO = #{classno}
+            </if>
+            <if test="farenetno != null and farenetno != ''">
+                and FARENETNO = #{farenetno}
+            </if>
+            <if test="faresiteno != null and faresiteno != ''">
+                and FARESITENO = #{faresiteno}
+            </if>
+            <if test="entrynetno != null and entrynetno != ''">
+                and ENTRYNETNO = #{entrynetno}
+            </if>
+            <if test="entrysiteno != null and entrysiteno != ''">
+                and ENTRYSITENO = #{entrysiteno}
+            </if>
+            <if test="entrylanetype != null and entrylanetype != ''">
+                and ENTRYLANETYPE = #{entrylanetype}
+            </if>
+            <if test="entrylaneno != null and entrylaneno != ''">
+                and ENTRYLANENO = #{entrylaneno}
+            </if>
+            <if test="entrystaffno != null and entrystaffno != ''">
+                and ENTRYSTAFFNO = #{entrystaffno}
+            </if>
+            <if test="entryclassno != null and entryclassno != ''">
+                and ENTRYCLASSNO = #{entryclassno}
+            </if>
+            <if test="entryvehicleplate != null and entryvehicleplate != ''">
+                and ENTRYVEHICLEPLATE = #{entryvehicleplate}
+            </if>
+            <if test="entrydate != null">
+                and ENTRYDATE = #{entrydate}
+            </if>
+            <if test="entryjobno != null and entryjobno != ''">
+                and ENTRYJOBNO = #{entryjobno}
+            </if>
+            <if test="entrymopno != null and entrymopno != ''">
+                and ENTRYMOPNO = #{entrymopno}
+            </if>
+            <if test="mopno != null and mopno != ''">
+                and MOPNO = #{mopno}
+            </if>
+            <if test="ticketno != null and ticketno != ''">
+                and TICKETNO = #{ticketno}
+            </if>
+            <if test="faretblversion != null and faretblversion != ''">
+                and FARETBLVERSION = #{faretblversion}
+            </if>
+            <if test="prixtotal != null">
+                and PRIXTOTAL = #{prixtotal}
+            </if>
+            <if test="prixpartial != null">
+                and PRIXPARTIAL = #{prixpartial}
+            </if>
+            <if test="mopdetail != null and mopdetail != ''">
+                and MOPDETAIL = #{mopdetail}
+            </if>
+            <if test="codeoctal != null and codeoctal != ''">
+                and CODEOCTAL = #{codeoctal}
+            </if>
+            <if test="tcscno != null and tcscno != ''">
+                and TCSCNO = #{tcscno}
+            </if>
+            <if test="tcscversion != null and tcscversion != ''">
+                and TCSCVERSION = #{tcscversion}
+            </if>
+            <if test="cartridgeno != null and cartridgeno != ''">
+                and CARTRIDGENO = #{cartridgeno}
+            </if>
+            <if test="tcscorderno != null and tcscorderno != ''">
+                and TCSCORDERNO = #{tcscorderno}
+            </if>
+            <if test="cartridgecycleno != null and cartridgecycleno != ''">
+                and CARTRIDGECYCLENO = #{cartridgecycleno}
+            </if>
+            <if test="paycscno != null and paycscno != ''">
+                and PAYCSCNO = #{paycscno}
+            </if>
+            <if test="exitvehicleplate != null and exitvehicleplate != ''">
+                and EXITVEHICLEPLATE = #{exitvehicleplate}
+            </if>
+            <if test="parvehicleplate != null and parvehicleplate != ''">
+                and PARVEHICLEPLATE = #{parvehicleplate}
+            </if>
+            <if test="processtype != null and processtype != ''">
+                and PROCESSTYPE = #{processtype}
+            </if>
+            <if test="coverweight != null and coverweight != ''">
+                and COVERWEIGHT = #{coverweight}
+            </if>
+            <if test="invoicetype != null and invoicetype != ''">
+                and INVOICETYPE = #{invoicetype}
+            </if>
+            <if test="equipstatus != null and equipstatus != ''">
+                and EQUIPSTATUS = #{equipstatus}
+            </if>
+            <if test="cflag != null and cflag != ''">
+                and CFLAG = #{cflag}
+            </if>
+            <if test="fareclassno != null and fareclassno != ''">
+                and FARECLASSNO = #{fareclassno}
+            </if>
+            <if test="shiftno != null and shiftno != ''">
+                and SHIFTNO = #{shiftno}
+            </if>
+            <if test="imagefile != null and imagefile != ''">
+                and IMAGEFILE = #{imagefile}
+            </if>
+            <if test="routeno != null and routeno != ''">
+                and ROUTENO = #{routeno}
+            </if>
+            <if test="fareaxles != null">
+                and FAREAXLES = #{fareaxles}
+            </if>
+            <if test="detectweight != null">
+                and DETECTWEIGHT = #{detectweight}
+            </if>
+            <if test="overweight != null">
+                and OVERWEIGHT = #{overweight}
+            </if>
+            <if test="overweighttype != null and overweighttype != ''">
+                and OVERWEIGHTTYPE = #{overweighttype}
+            </if>
+            <if test="entryaxles != null and entryaxles != ''">
+                and ENTRYAXLES = #{entryaxles}
+            </if>
+            <if test="entryweight != null">
+                and ENTRYWEIGHT = #{entryweight}
+            </if>
+            <if test="entryoverweight != null">
+                and ENTRYOVERWEIGHT = #{entryoverweight}
+            </if>
+            <if test="entryoverweighttype != null and entryoverweighttype != ''">
+                and ENTRYOVERWEIGHTTYPE = #{entryoverweighttype}
+            </if>
+            <if test="entryparvehicleplate != null and entryparvehicleplate != ''">
+                and ENTRYPARVEHICLEPLATE = #{entryparvehicleplate}
+            </if>
+            <if test="picturecomment != null and picturecomment != ''">
+                and PICTURECOMMENT = #{picturecomment}
+            </if>
+            <if test="picturecomment2 != null and picturecomment2 != ''">
+                and PICTURECOMMENT2 = #{picturecomment2}
+            </if>
+            <if test="weightmode != null and weightmode != ''">
+                and WEIGHTMODE = #{weightmode}
+            </if>
+            <if test="parvehicleplatecolor != null and parvehicleplatecolor != ''">
+                and PARVEHICLEPLATECOLOR = #{parvehicleplatecolor}
+            </if>
+            <if test="distance != null">
+                and DISTANCE = #{distance}
+            </if>
+            <if test="computerate != null">
+                and COMPUTERATE = #{computerate}
+            </if>
+            <if test="fareweight != null">
+                and FAREWEIGHT = #{fareweight}
+            </if>
+            <if test="overweightfare != null">
+                and OVERWEIGHTFARE = #{overweightfare}
+            </if>
+            <if test="axlegroups != null">
+                and AXLEGROUPS = #{axlegroups}
+            </if>
+            <if test="axlegroup1type != null and axlegroup1type != ''">
+                and AXLEGROUP1TYPE = #{axlegroup1type}
+            </if>
+            <if test="axlegroup1weight != null">
+                and AXLEGROUP1WEIGHT = #{axlegroup1weight}
+            </if>
+            <if test="axlegroup2type != null and axlegroup2type != ''">
+                and AXLEGROUP2TYPE = #{axlegroup2type}
+            </if>
+            <if test="axlegroup2weight != null">
+                and AXLEGROUP2WEIGHT = #{axlegroup2weight}
+            </if>
+            <if test="axlegroup3type != null and axlegroup3type != ''">
+                and AXLEGROUP3TYPE = #{axlegroup3type}
+            </if>
+            <if test="axlegroup3weight != null">
+                and AXLEGROUP3WEIGHT = #{axlegroup3weight}
+            </if>
+            <if test="axlegroup4type != null and axlegroup4type != ''">
+                and AXLEGROUP4TYPE = #{axlegroup4type}
+            </if>
+            <if test="axlegroup4weight != null">
+                and AXLEGROUP4WEIGHT = #{axlegroup4weight}
+            </if>
+            <if test="axlegroup5type != null and axlegroup5type != ''">
+                and AXLEGROUP5TYPE = #{axlegroup5type}
+            </if>
+            <if test="axlegroup5weight != null">
+                and AXLEGROUP5WEIGHT = #{axlegroup5weight}
+            </if>
+            <if test="axlegroup6type != null and axlegroup6type != ''">
+                and AXLEGROUP6TYPE = #{axlegroup6type}
+            </if>
+            <if test="axlegroup6weight != null">
+                and AXLEGROUP6WEIGHT = #{axlegroup6weight}
+            </if>
+            <if test="axlegroup7type != null and axlegroup7type != ''">
+                and AXLEGROUP7TYPE = #{axlegroup7type}
+            </if>
+            <if test="axlegroup7weight != null">
+                and AXLEGROUP7WEIGHT = #{axlegroup7weight}
+            </if>
+            <if test="axlegroup8type != null and axlegroup8type != ''">
+                and AXLEGROUP8TYPE = #{axlegroup8type}
+            </if>
+            <if test="axlegroup8weight != null">
+                and AXLEGROUP8WEIGHT = #{axlegroup8weight}
+            </if>
+            <if test="axlegroup9type != null and axlegroup9type != ''">
+                and AXLEGROUP9TYPE = #{axlegroup9type}
+            </if>
+            <if test="axlegroup9weight != null">
+                and AXLEGROUP9WEIGHT = #{axlegroup9weight}
+            </if>
+            <if test="speed != null">
+                and SPEED = #{speed}
+            </if>
+            <if test="acceleration != null">
+                and ACCELERATION = #{acceleration}
+            </if>
+            <if test="fareaxlegroup1type != null and fareaxlegroup1type != ''">
+                and FAREAXLEGROUP1TYPE = #{fareaxlegroup1type}
+            </if>
+            <if test="fareaxlegroup2type != null and fareaxlegroup2type != ''">
+                and FAREAXLEGROUP2TYPE = #{fareaxlegroup2type}
+            </if>
+            <if test="fareaxlegroup3type != null and fareaxlegroup3type != ''">
+                and FAREAXLEGROUP3TYPE = #{fareaxlegroup3type}
+            </if>
+            <if test="fareaxlegroup4type != null and fareaxlegroup4type != ''">
+                and FAREAXLEGROUP4TYPE = #{fareaxlegroup4type}
+            </if>
+            <if test="fareaxlegroup5type != null and fareaxlegroup5type != ''">
+                and FAREAXLEGROUP5TYPE = #{fareaxlegroup5type}
+            </if>
+            <if test="fareaxlegroup6type != null and fareaxlegroup6type != ''">
+                and FAREAXLEGROUP6TYPE = #{fareaxlegroup6type}
+            </if>
+            <if test="fareaxlegroup7type != null and fareaxlegroup7type != ''">
+                and FAREAXLEGROUP7TYPE = #{fareaxlegroup7type}
+            </if>
+            <if test="fareaxlegroup8type != null and fareaxlegroup8type != ''">
+                and FAREAXLEGROUP8TYPE = #{fareaxlegroup8type}
+            </if>
+            <if test="fareaxlegroup9type != null and fareaxlegroup9type != ''">
+                and FAREAXLEGROUP9TYPE = #{fareaxlegroup9type}
+            </if>
+            <if test="weightddhm != null">
+                and WEIGHTDDHM = #{weightddhm}
+            </if>
+            <if test="entryaxlegroups != null">
+                and ENTRYAXLEGROUPS = #{entryaxlegroups}
+            </if>
+            <if test="entryaxlegroup1type != null and entryaxlegroup1type != ''">
+                and ENTRYAXLEGROUP1TYPE = #{entryaxlegroup1type}
+            </if>
+            <if test="entryaxlegroup2type != null and entryaxlegroup2type != ''">
+                and ENTRYAXLEGROUP2TYPE = #{entryaxlegroup2type}
+            </if>
+            <if test="entryaxlegroup3type != null and entryaxlegroup3type != ''">
+                and ENTRYAXLEGROUP3TYPE = #{entryaxlegroup3type}
+            </if>
+            <if test="entryaxlegroup4type != null and entryaxlegroup4type != ''">
+                and ENTRYAXLEGROUP4TYPE = #{entryaxlegroup4type}
+            </if>
+            <if test="entryaxlegroup5type != null and entryaxlegroup5type != ''">
+                and ENTRYAXLEGROUP5TYPE = #{entryaxlegroup5type}
+            </if>
+            <if test="entryaxlegroup6type != null and entryaxlegroup6type != ''">
+                and ENTRYAXLEGROUP6TYPE = #{entryaxlegroup6type}
+            </if>
+            <if test="entryaxlegroup7type != null and entryaxlegroup7type != ''">
+                and ENTRYAXLEGROUP7TYPE = #{entryaxlegroup7type}
+            </if>
+            <if test="entryaxlegroup8type != null and entryaxlegroup8type != ''">
+                and ENTRYAXLEGROUP8TYPE = #{entryaxlegroup8type}
+            </if>
+            <if test="entryaxlegroup9type != null and entryaxlegroup9type != ''">
+                and ENTRYAXLEGROUP9TYPE = #{entryaxlegroup9type}
+            </if>
+            <if test="picturecommenttype != null and picturecommenttype != ''">
+                and PICTURECOMMENTTYPE = #{picturecommenttype}
+            </if>
+            <if test="detectaxles != null">
+                and DETECTAXLES = #{detectaxles}
+            </if>
+            <if test="isoverload != null and isoverload != ''">
+                and ISOVERLOAD = #{isoverload}
+            </if>
+            <if test="isspecialtrunk != null and isspecialtrunk != ''">
+                and ISSPECIALTRUNK = #{isspecialtrunk}
+            </if>
+            <if test="limitweight != null">
+                and LIMITWEIGHT = #{limitweight}
+            </if>
+            <if test="fareaxlegroup1weight != null">
+                and FAREAXLEGROUP1WEIGHT = #{fareaxlegroup1weight}
+            </if>
+            <if test="fareaxlegroup2weight != null">
+                and FAREAXLEGROUP2WEIGHT = #{fareaxlegroup2weight}
+            </if>
+            <if test="fareaxlegroup3weight != null">
+                and FAREAXLEGROUP3WEIGHT = #{fareaxlegroup3weight}
+            </if>
+            <if test="fareaxlegroup4weight != null">
+                and FAREAXLEGROUP4WEIGHT = #{fareaxlegroup4weight}
+            </if>
+            <if test="fareaxlegroup5weight != null">
+                and FAREAXLEGROUP5WEIGHT = #{fareaxlegroup5weight}
+            </if>
+            <if test="fareaxlegroup6weight != null">
+                and FAREAXLEGROUP6WEIGHT = #{fareaxlegroup6weight}
+            </if>
+            <if test="fareaxlegroup7weight != null">
+                and FAREAXLEGROUP7WEIGHT = #{fareaxlegroup7weight}
+            </if>
+            <if test="fareaxlegroup8weight != null">
+                and FAREAXLEGROUP8WEIGHT = #{fareaxlegroup8weight}
+            </if>
+            <if test="fareaxlegroup9weight != null">
+                and FAREAXLEGROUP9WEIGHT = #{fareaxlegroup9weight}
+            </if>
+            <if test="entryaxlegroup1weight != null">
+                and ENTRYAXLEGROUP1WEIGHT = #{entryaxlegroup1weight}
+            </if>
+            <if test="entryaxlegroup2weight != null">
+                and ENTRYAXLEGROUP2WEIGHT = #{entryaxlegroup2weight}
+            </if>
+            <if test="entryaxlegroup3weight != null">
+                and ENTRYAXLEGROUP3WEIGHT = #{entryaxlegroup3weight}
+            </if>
+            <if test="entryaxlegroup4weight != null">
+                and ENTRYAXLEGROUP4WEIGHT = #{entryaxlegroup4weight}
+            </if>
+            <if test="entryaxlegroup5weight != null">
+                and ENTRYAXLEGROUP5WEIGHT = #{entryaxlegroup5weight}
+            </if>
+            <if test="entryaxlegroup6weight != null">
+                and ENTRYAXLEGROUP6WEIGHT = #{entryaxlegroup6weight}
+            </if>
+            <if test="entryaxlegroup7weight != null">
+                and ENTRYAXLEGROUP7WEIGHT = #{entryaxlegroup7weight}
+            </if>
+            <if test="entryaxlegroup8weight != null">
+                and ENTRYAXLEGROUP8WEIGHT = #{entryaxlegroup8weight}
+            </if>
+            <if test="entryaxlegroup9weight != null">
+                and ENTRYAXLEGROUP9WEIGHT = #{entryaxlegroup9weight}
+            </if>
+            <if test="fareaxlegroups != null">
+                and FAREAXLEGROUPS = #{fareaxlegroups}
+            </if>
+            <if test="discountfare != null">
+                and DISCOUNTFARE = #{discountfare}
+            </if>
+            <if test="cpucardnetwork != null and cpucardnetwork != ''">
+                and CPUCARDNETWORK = #{cpucardnetwork}
+            </if>
+            <if test="cpucardno != null and cpucardno != ''">
+                and CPUCARDNO = #{cpucardno}
+            </if>
+            <if test="cpucardtype != null and cpucardtype != ''">
+                and CPUCARDTYPE = #{cpucardtype}
+            </if>
+            <if test="flagstanum != null">
+                and FLAGSTANUM = #{flagstanum}
+            </if>
+            <if test="flagsta != null and flagsta != ''">
+                and FLAGSTA = #{flagsta}
+            </if>
+            <if test="byField1 != null">
+                and BY_FIELD1 = #{byField1}
+            </if>
+            <if test="qrtransid != null and qrtransid != ''">
+                and QRTRANSID = #{qrtransid}
+            </if>
+            <if test="qrpayfare != null and qrpayfare != ''">
+                and QRPAYFARE = #{qrpayfare}
+            </if>
+            <if test="qrpaytype != null and qrpaytype != ''">
+                and QRPAYTYPE = #{qrpaytype}
+            </if>
+            <if test="cflag1 != null and cflag1 != ''">
+                and CFLAG1 = #{cflag1}
+            </if>
+            <if test="cflag2 != null and cflag2 != ''">
+                and CFLAG2 = #{cflag2}
+            </if>
+            <if test="uploadflag != null and uploadflag != ''">
+                and UPLOADFLAG = #{uploadflag}
+            </if>
+            <if test="cflag3 != null and cflag3 != ''">
+                and CFLAG3 = #{cflag3}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="netno" useGeneratedKeys="true">
+        insert into XZTOLLSTATION.DATA_TRANSACTION(LANETYPE, LANEMODE, CETC, SQUADNO, STAFFNAME, OBSTCSC, OBSMOP, OBSSEQUENCE, OBSPASSAGE, CLASSNO, FARENETNO, FARESITENO, ENTRYNETNO, ENTRYSITENO, ENTRYLANETYPE, ENTRYLANENO, ENTRYSTAFFNO, ENTRYCLASSNO, ENTRYVEHICLEPLATE, ENTRYDATE, ENTRYJOBNO, ENTRYMOPNO, MOPNO, TICKETNO, FARETBLVERSION, PRIXTOTAL, PRIXPARTIAL, MOPDETAIL, CODEOCTAL, TCSCNO, TCSCVERSION, CARTRIDGENO, TCSCORDERNO, CARTRIDGECYCLENO, PAYCSCNO, EXITVEHICLEPLATE, PARVEHICLEPLATE, PROCESSTYPE, COVERWEIGHT, INVOICETYPE, EQUIPSTATUS, CFLAG, FARECLASSNO, SHIFTNO, IMAGEFILE, ROUTENO, FAREAXLES, DETECTWEIGHT, OVERWEIGHT, OVERWEIGHTTYPE, ENTRYAXLES, ENTRYWEIGHT, ENTRYOVERWEIGHT, ENTRYOVERWEIGHTTYPE, ENTRYPARVEHICLEPLATE, PICTURECOMMENT, PICTURECOMMENT2, WEIGHTMODE, PARVEHICLEPLATECOLOR, DISTANCE, COMPUTERATE, FAREWEIGHT, OVERWEIGHTFARE, AXLEGROUPS, AXLEGROUP1TYPE, AXLEGROUP1WEIGHT, AXLEGROUP2TYPE, AXLEGROUP2WEIGHT, AXLEGROUP3TYPE, AXLEGROUP3WEIGHT, AXLEGROUP4TYPE, AXLEGROUP4WEIGHT, AXLEGROUP5TYPE, AXLEGROUP5WEIGHT, AXLEGROUP6TYPE, AXLEGROUP6WEIGHT, AXLEGROUP7TYPE, AXLEGROUP7WEIGHT, AXLEGROUP8TYPE, AXLEGROUP8WEIGHT, AXLEGROUP9TYPE, AXLEGROUP9WEIGHT, SPEED, ACCELERATION, FAREAXLEGROUP1TYPE, FAREAXLEGROUP2TYPE, FAREAXLEGROUP3TYPE, FAREAXLEGROUP4TYPE, FAREAXLEGROUP5TYPE, FAREAXLEGROUP6TYPE, FAREAXLEGROUP7TYPE, FAREAXLEGROUP8TYPE, FAREAXLEGROUP9TYPE, WEIGHTDDHM, ENTRYAXLEGROUPS, ENTRYAXLEGROUP1TYPE, ENTRYAXLEGROUP2TYPE, ENTRYAXLEGROUP3TYPE, ENTRYAXLEGROUP4TYPE, ENTRYAXLEGROUP5TYPE, ENTRYAXLEGROUP6TYPE, ENTRYAXLEGROUP7TYPE, ENTRYAXLEGROUP8TYPE, ENTRYAXLEGROUP9TYPE, PICTURECOMMENTTYPE, DETECTAXLES, ISOVERLOAD, ISSPECIALTRUNK, LIMITWEIGHT, FAREAXLEGROUP1WEIGHT, FAREAXLEGROUP2WEIGHT, FAREAXLEGROUP3WEIGHT, FAREAXLEGROUP4WEIGHT, FAREAXLEGROUP5WEIGHT, FAREAXLEGROUP6WEIGHT, FAREAXLEGROUP7WEIGHT, FAREAXLEGROUP8WEIGHT, FAREAXLEGROUP9WEIGHT, ENTRYAXLEGROUP1WEIGHT, ENTRYAXLEGROUP2WEIGHT, ENTRYAXLEGROUP3WEIGHT, ENTRYAXLEGROUP4WEIGHT, ENTRYAXLEGROUP5WEIGHT, ENTRYAXLEGROUP6WEIGHT, ENTRYAXLEGROUP7WEIGHT, ENTRYAXLEGROUP8WEIGHT, ENTRYAXLEGROUP9WEIGHT, FAREAXLEGROUPS, DISCOUNTFARE, CPUCARDNETWORK, CPUCARDNO, CPUCARDTYPE, FLAGSTANUM, FLAGSTA, BY_FIELD1, QRTRANSID, QRPAYFARE, QRPAYTYPE, CFLAG1, CFLAG2, UPLOADFLAG, CFLAG3)
+        values (#{lanetype}, #{lanemode}, #{cetc}, #{squadno}, #{staffname}, #{obstcsc}, #{obsmop}, #{obssequence}, #{obspassage}, #{classno}, #{farenetno}, #{faresiteno}, #{entrynetno}, #{entrysiteno}, #{entrylanetype}, #{entrylaneno}, #{entrystaffno}, #{entryclassno}, #{entryvehicleplate}, #{entrydate}, #{entryjobno}, #{entrymopno}, #{mopno}, #{ticketno}, #{faretblversion}, #{prixtotal}, #{prixpartial}, #{mopdetail}, #{codeoctal}, #{tcscno}, #{tcscversion}, #{cartridgeno}, #{tcscorderno}, #{cartridgecycleno}, #{paycscno}, #{exitvehicleplate}, #{parvehicleplate}, #{processtype}, #{coverweight}, #{invoicetype}, #{equipstatus}, #{cflag}, #{fareclassno}, #{shiftno}, #{imagefile}, #{routeno}, #{fareaxles}, #{detectweight}, #{overweight}, #{overweighttype}, #{entryaxles}, #{entryweight}, #{entryoverweight}, #{entryoverweighttype}, #{entryparvehicleplate}, #{picturecomment}, #{picturecomment2}, #{weightmode}, #{parvehicleplatecolor}, #{distance}, #{computerate}, #{fareweight}, #{overweightfare}, #{axlegroups}, #{axlegroup1type}, #{axlegroup1weight}, #{axlegroup2type}, #{axlegroup2weight}, #{axlegroup3type}, #{axlegroup3weight}, #{axlegroup4type}, #{axlegroup4weight}, #{axlegroup5type}, #{axlegroup5weight}, #{axlegroup6type}, #{axlegroup6weight}, #{axlegroup7type}, #{axlegroup7weight}, #{axlegroup8type}, #{axlegroup8weight}, #{axlegroup9type}, #{axlegroup9weight}, #{speed}, #{acceleration}, #{fareaxlegroup1type}, #{fareaxlegroup2type}, #{fareaxlegroup3type}, #{fareaxlegroup4type}, #{fareaxlegroup5type}, #{fareaxlegroup6type}, #{fareaxlegroup7type}, #{fareaxlegroup8type}, #{fareaxlegroup9type}, #{weightddhm}, #{entryaxlegroups}, #{entryaxlegroup1type}, #{entryaxlegroup2type}, #{entryaxlegroup3type}, #{entryaxlegroup4type}, #{entryaxlegroup5type}, #{entryaxlegroup6type}, #{entryaxlegroup7type}, #{entryaxlegroup8type}, #{entryaxlegroup9type}, #{picturecommenttype}, #{detectaxles}, #{isoverload}, #{isspecialtrunk}, #{limitweight}, #{fareaxlegroup1weight}, #{fareaxlegroup2weight}, #{fareaxlegroup3weight}, #{fareaxlegroup4weight}, #{fareaxlegroup5weight}, #{fareaxlegroup6weight}, #{fareaxlegroup7weight}, #{fareaxlegroup8weight}, #{fareaxlegroup9weight}, #{entryaxlegroup1weight}, #{entryaxlegroup2weight}, #{entryaxlegroup3weight}, #{entryaxlegroup4weight}, #{entryaxlegroup5weight}, #{entryaxlegroup6weight}, #{entryaxlegroup7weight}, #{entryaxlegroup8weight}, #{entryaxlegroup9weight}, #{fareaxlegroups}, #{discountfare}, #{cpucardnetwork}, #{cpucardno}, #{cpucardtype}, #{flagstanum}, #{flagsta}, #{byField1}, #{qrtransid}, #{qrpayfare}, #{qrpaytype}, #{cflag1}, #{cflag2}, #{uploadflag}, #{cflag3})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update XZTOLLSTATION.DATA_TRANSACTION
+        <set>
+            <if test="lanetype != null and lanetype != ''">
+                LANETYPE = #{lanetype},
+            </if>
+            <if test="lanemode != null and lanemode != ''">
+                LANEMODE = #{lanemode},
+            </if>
+            <if test="cetc != null and cetc != ''">
+                CETC = #{cetc},
+            </if>
+            <if test="squadno != null and squadno != ''">
+                SQUADNO = #{squadno},
+            </if>
+            <if test="staffname != null and staffname != ''">
+                STAFFNAME = #{staffname},
+            </if>
+            <if test="obstcsc != null and obstcsc != ''">
+                OBSTCSC = #{obstcsc},
+            </if>
+            <if test="obsmop != null and obsmop != ''">
+                OBSMOP = #{obsmop},
+            </if>
+            <if test="obssequence != null and obssequence != ''">
+                OBSSEQUENCE = #{obssequence},
+            </if>
+            <if test="obspassage != null and obspassage != ''">
+                OBSPASSAGE = #{obspassage},
+            </if>
+            <if test="classno != null and classno != ''">
+                CLASSNO = #{classno},
+            </if>
+            <if test="farenetno != null and farenetno != ''">
+                FARENETNO = #{farenetno},
+            </if>
+            <if test="faresiteno != null and faresiteno != ''">
+                FARESITENO = #{faresiteno},
+            </if>
+            <if test="entrynetno != null and entrynetno != ''">
+                ENTRYNETNO = #{entrynetno},
+            </if>
+            <if test="entrysiteno != null and entrysiteno != ''">
+                ENTRYSITENO = #{entrysiteno},
+            </if>
+            <if test="entrylanetype != null and entrylanetype != ''">
+                ENTRYLANETYPE = #{entrylanetype},
+            </if>
+            <if test="entrylaneno != null and entrylaneno != ''">
+                ENTRYLANENO = #{entrylaneno},
+            </if>
+            <if test="entrystaffno != null and entrystaffno != ''">
+                ENTRYSTAFFNO = #{entrystaffno},
+            </if>
+            <if test="entryclassno != null and entryclassno != ''">
+                ENTRYCLASSNO = #{entryclassno},
+            </if>
+            <if test="entryvehicleplate != null and entryvehicleplate != ''">
+                ENTRYVEHICLEPLATE = #{entryvehicleplate},
+            </if>
+            <if test="entrydate != null">
+                ENTRYDATE = #{entrydate},
+            </if>
+            <if test="entryjobno != null and entryjobno != ''">
+                ENTRYJOBNO = #{entryjobno},
+            </if>
+            <if test="entrymopno != null and entrymopno != ''">
+                ENTRYMOPNO = #{entrymopno},
+            </if>
+            <if test="mopno != null and mopno != ''">
+                MOPNO = #{mopno},
+            </if>
+            <if test="ticketno != null and ticketno != ''">
+                TICKETNO = #{ticketno},
+            </if>
+            <if test="faretblversion != null and faretblversion != ''">
+                FARETBLVERSION = #{faretblversion},
+            </if>
+            <if test="prixtotal != null">
+                PRIXTOTAL = #{prixtotal},
+            </if>
+            <if test="prixpartial != null">
+                PRIXPARTIAL = #{prixpartial},
+            </if>
+            <if test="mopdetail != null and mopdetail != ''">
+                MOPDETAIL = #{mopdetail},
+            </if>
+            <if test="codeoctal != null and codeoctal != ''">
+                CODEOCTAL = #{codeoctal},
+            </if>
+            <if test="tcscno != null and tcscno != ''">
+                TCSCNO = #{tcscno},
+            </if>
+            <if test="tcscversion != null and tcscversion != ''">
+                TCSCVERSION = #{tcscversion},
+            </if>
+            <if test="cartridgeno != null and cartridgeno != ''">
+                CARTRIDGENO = #{cartridgeno},
+            </if>
+            <if test="tcscorderno != null and tcscorderno != ''">
+                TCSCORDERNO = #{tcscorderno},
+            </if>
+            <if test="cartridgecycleno != null and cartridgecycleno != ''">
+                CARTRIDGECYCLENO = #{cartridgecycleno},
+            </if>
+            <if test="paycscno != null and paycscno != ''">
+                PAYCSCNO = #{paycscno},
+            </if>
+            <if test="exitvehicleplate != null and exitvehicleplate != ''">
+                EXITVEHICLEPLATE = #{exitvehicleplate},
+            </if>
+            <if test="parvehicleplate != null and parvehicleplate != ''">
+                PARVEHICLEPLATE = #{parvehicleplate},
+            </if>
+            <if test="processtype != null and processtype != ''">
+                PROCESSTYPE = #{processtype},
+            </if>
+            <if test="coverweight != null and coverweight != ''">
+                COVERWEIGHT = #{coverweight},
+            </if>
+            <if test="invoicetype != null and invoicetype != ''">
+                INVOICETYPE = #{invoicetype},
+            </if>
+            <if test="equipstatus != null and equipstatus != ''">
+                EQUIPSTATUS = #{equipstatus},
+            </if>
+            <if test="cflag != null and cflag != ''">
+                CFLAG = #{cflag},
+            </if>
+            <if test="fareclassno != null and fareclassno != ''">
+                FARECLASSNO = #{fareclassno},
+            </if>
+            <if test="shiftno != null and shiftno != ''">
+                SHIFTNO = #{shiftno},
+            </if>
+            <if test="imagefile != null and imagefile != ''">
+                IMAGEFILE = #{imagefile},
+            </if>
+            <if test="routeno != null and routeno != ''">
+                ROUTENO = #{routeno},
+            </if>
+            <if test="fareaxles != null">
+                FAREAXLES = #{fareaxles},
+            </if>
+            <if test="detectweight != null">
+                DETECTWEIGHT = #{detectweight},
+            </if>
+            <if test="overweight != null">
+                OVERWEIGHT = #{overweight},
+            </if>
+            <if test="overweighttype != null and overweighttype != ''">
+                OVERWEIGHTTYPE = #{overweighttype},
+            </if>
+            <if test="entryaxles != null and entryaxles != ''">
+                ENTRYAXLES = #{entryaxles},
+            </if>
+            <if test="entryweight != null">
+                ENTRYWEIGHT = #{entryweight},
+            </if>
+            <if test="entryoverweight != null">
+                ENTRYOVERWEIGHT = #{entryoverweight},
+            </if>
+            <if test="entryoverweighttype != null and entryoverweighttype != ''">
+                ENTRYOVERWEIGHTTYPE = #{entryoverweighttype},
+            </if>
+            <if test="entryparvehicleplate != null and entryparvehicleplate != ''">
+                ENTRYPARVEHICLEPLATE = #{entryparvehicleplate},
+            </if>
+            <if test="picturecomment != null and picturecomment != ''">
+                PICTURECOMMENT = #{picturecomment},
+            </if>
+            <if test="picturecomment2 != null and picturecomment2 != ''">
+                PICTURECOMMENT2 = #{picturecomment2},
+            </if>
+            <if test="weightmode != null and weightmode != ''">
+                WEIGHTMODE = #{weightmode},
+            </if>
+            <if test="parvehicleplatecolor != null and parvehicleplatecolor != ''">
+                PARVEHICLEPLATECOLOR = #{parvehicleplatecolor},
+            </if>
+            <if test="distance != null">
+                DISTANCE = #{distance},
+            </if>
+            <if test="computerate != null">
+                COMPUTERATE = #{computerate},
+            </if>
+            <if test="fareweight != null">
+                FAREWEIGHT = #{fareweight},
+            </if>
+            <if test="overweightfare != null">
+                OVERWEIGHTFARE = #{overweightfare},
+            </if>
+            <if test="axlegroups != null">
+                AXLEGROUPS = #{axlegroups},
+            </if>
+            <if test="axlegroup1type != null and axlegroup1type != ''">
+                AXLEGROUP1TYPE = #{axlegroup1type},
+            </if>
+            <if test="axlegroup1weight != null">
+                AXLEGROUP1WEIGHT = #{axlegroup1weight},
+            </if>
+            <if test="axlegroup2type != null and axlegroup2type != ''">
+                AXLEGROUP2TYPE = #{axlegroup2type},
+            </if>
+            <if test="axlegroup2weight != null">
+                AXLEGROUP2WEIGHT = #{axlegroup2weight},
+            </if>
+            <if test="axlegroup3type != null and axlegroup3type != ''">
+                AXLEGROUP3TYPE = #{axlegroup3type},
+            </if>
+            <if test="axlegroup3weight != null">
+                AXLEGROUP3WEIGHT = #{axlegroup3weight},
+            </if>
+            <if test="axlegroup4type != null and axlegroup4type != ''">
+                AXLEGROUP4TYPE = #{axlegroup4type},
+            </if>
+            <if test="axlegroup4weight != null">
+                AXLEGROUP4WEIGHT = #{axlegroup4weight},
+            </if>
+            <if test="axlegroup5type != null and axlegroup5type != ''">
+                AXLEGROUP5TYPE = #{axlegroup5type},
+            </if>
+            <if test="axlegroup5weight != null">
+                AXLEGROUP5WEIGHT = #{axlegroup5weight},
+            </if>
+            <if test="axlegroup6type != null and axlegroup6type != ''">
+                AXLEGROUP6TYPE = #{axlegroup6type},
+            </if>
+            <if test="axlegroup6weight != null">
+                AXLEGROUP6WEIGHT = #{axlegroup6weight},
+            </if>
+            <if test="axlegroup7type != null and axlegroup7type != ''">
+                AXLEGROUP7TYPE = #{axlegroup7type},
+            </if>
+            <if test="axlegroup7weight != null">
+                AXLEGROUP7WEIGHT = #{axlegroup7weight},
+            </if>
+            <if test="axlegroup8type != null and axlegroup8type != ''">
+                AXLEGROUP8TYPE = #{axlegroup8type},
+            </if>
+            <if test="axlegroup8weight != null">
+                AXLEGROUP8WEIGHT = #{axlegroup8weight},
+            </if>
+            <if test="axlegroup9type != null and axlegroup9type != ''">
+                AXLEGROUP9TYPE = #{axlegroup9type},
+            </if>
+            <if test="axlegroup9weight != null">
+                AXLEGROUP9WEIGHT = #{axlegroup9weight},
+            </if>
+            <if test="speed != null">
+                SPEED = #{speed},
+            </if>
+            <if test="acceleration != null">
+                ACCELERATION = #{acceleration},
+            </if>
+            <if test="fareaxlegroup1type != null and fareaxlegroup1type != ''">
+                FAREAXLEGROUP1TYPE = #{fareaxlegroup1type},
+            </if>
+            <if test="fareaxlegroup2type != null and fareaxlegroup2type != ''">
+                FAREAXLEGROUP2TYPE = #{fareaxlegroup2type},
+            </if>
+            <if test="fareaxlegroup3type != null and fareaxlegroup3type != ''">
+                FAREAXLEGROUP3TYPE = #{fareaxlegroup3type},
+            </if>
+            <if test="fareaxlegroup4type != null and fareaxlegroup4type != ''">
+                FAREAXLEGROUP4TYPE = #{fareaxlegroup4type},
+            </if>
+            <if test="fareaxlegroup5type != null and fareaxlegroup5type != ''">
+                FAREAXLEGROUP5TYPE = #{fareaxlegroup5type},
+            </if>
+            <if test="fareaxlegroup6type != null and fareaxlegroup6type != ''">
+                FAREAXLEGROUP6TYPE = #{fareaxlegroup6type},
+            </if>
+            <if test="fareaxlegroup7type != null and fareaxlegroup7type != ''">
+                FAREAXLEGROUP7TYPE = #{fareaxlegroup7type},
+            </if>
+            <if test="fareaxlegroup8type != null and fareaxlegroup8type != ''">
+                FAREAXLEGROUP8TYPE = #{fareaxlegroup8type},
+            </if>
+            <if test="fareaxlegroup9type != null and fareaxlegroup9type != ''">
+                FAREAXLEGROUP9TYPE = #{fareaxlegroup9type},
+            </if>
+            <if test="weightddhm != null">
+                WEIGHTDDHM = #{weightddhm},
+            </if>
+            <if test="entryaxlegroups != null">
+                ENTRYAXLEGROUPS = #{entryaxlegroups},
+            </if>
+            <if test="entryaxlegroup1type != null and entryaxlegroup1type != ''">
+                ENTRYAXLEGROUP1TYPE = #{entryaxlegroup1type},
+            </if>
+            <if test="entryaxlegroup2type != null and entryaxlegroup2type != ''">
+                ENTRYAXLEGROUP2TYPE = #{entryaxlegroup2type},
+            </if>
+            <if test="entryaxlegroup3type != null and entryaxlegroup3type != ''">
+                ENTRYAXLEGROUP3TYPE = #{entryaxlegroup3type},
+            </if>
+            <if test="entryaxlegroup4type != null and entryaxlegroup4type != ''">
+                ENTRYAXLEGROUP4TYPE = #{entryaxlegroup4type},
+            </if>
+            <if test="entryaxlegroup5type != null and entryaxlegroup5type != ''">
+                ENTRYAXLEGROUP5TYPE = #{entryaxlegroup5type},
+            </if>
+            <if test="entryaxlegroup6type != null and entryaxlegroup6type != ''">
+                ENTRYAXLEGROUP6TYPE = #{entryaxlegroup6type},
+            </if>
+            <if test="entryaxlegroup7type != null and entryaxlegroup7type != ''">
+                ENTRYAXLEGROUP7TYPE = #{entryaxlegroup7type},
+            </if>
+            <if test="entryaxlegroup8type != null and entryaxlegroup8type != ''">
+                ENTRYAXLEGROUP8TYPE = #{entryaxlegroup8type},
+            </if>
+            <if test="entryaxlegroup9type != null and entryaxlegroup9type != ''">
+                ENTRYAXLEGROUP9TYPE = #{entryaxlegroup9type},
+            </if>
+            <if test="picturecommenttype != null and picturecommenttype != ''">
+                PICTURECOMMENTTYPE = #{picturecommenttype},
+            </if>
+            <if test="detectaxles != null">
+                DETECTAXLES = #{detectaxles},
+            </if>
+            <if test="isoverload != null and isoverload != ''">
+                ISOVERLOAD = #{isoverload},
+            </if>
+            <if test="isspecialtrunk != null and isspecialtrunk != ''">
+                ISSPECIALTRUNK = #{isspecialtrunk},
+            </if>
+            <if test="limitweight != null">
+                LIMITWEIGHT = #{limitweight},
+            </if>
+            <if test="fareaxlegroup1weight != null">
+                FAREAXLEGROUP1WEIGHT = #{fareaxlegroup1weight},
+            </if>
+            <if test="fareaxlegroup2weight != null">
+                FAREAXLEGROUP2WEIGHT = #{fareaxlegroup2weight},
+            </if>
+            <if test="fareaxlegroup3weight != null">
+                FAREAXLEGROUP3WEIGHT = #{fareaxlegroup3weight},
+            </if>
+            <if test="fareaxlegroup4weight != null">
+                FAREAXLEGROUP4WEIGHT = #{fareaxlegroup4weight},
+            </if>
+            <if test="fareaxlegroup5weight != null">
+                FAREAXLEGROUP5WEIGHT = #{fareaxlegroup5weight},
+            </if>
+            <if test="fareaxlegroup6weight != null">
+                FAREAXLEGROUP6WEIGHT = #{fareaxlegroup6weight},
+            </if>
+            <if test="fareaxlegroup7weight != null">
+                FAREAXLEGROUP7WEIGHT = #{fareaxlegroup7weight},
+            </if>
+            <if test="fareaxlegroup8weight != null">
+                FAREAXLEGROUP8WEIGHT = #{fareaxlegroup8weight},
+            </if>
+            <if test="fareaxlegroup9weight != null">
+                FAREAXLEGROUP9WEIGHT = #{fareaxlegroup9weight},
+            </if>
+            <if test="entryaxlegroup1weight != null">
+                ENTRYAXLEGROUP1WEIGHT = #{entryaxlegroup1weight},
+            </if>
+            <if test="entryaxlegroup2weight != null">
+                ENTRYAXLEGROUP2WEIGHT = #{entryaxlegroup2weight},
+            </if>
+            <if test="entryaxlegroup3weight != null">
+                ENTRYAXLEGROUP3WEIGHT = #{entryaxlegroup3weight},
+            </if>
+            <if test="entryaxlegroup4weight != null">
+                ENTRYAXLEGROUP4WEIGHT = #{entryaxlegroup4weight},
+            </if>
+            <if test="entryaxlegroup5weight != null">
+                ENTRYAXLEGROUP5WEIGHT = #{entryaxlegroup5weight},
+            </if>
+            <if test="entryaxlegroup6weight != null">
+                ENTRYAXLEGROUP6WEIGHT = #{entryaxlegroup6weight},
+            </if>
+            <if test="entryaxlegroup7weight != null">
+                ENTRYAXLEGROUP7WEIGHT = #{entryaxlegroup7weight},
+            </if>
+            <if test="entryaxlegroup8weight != null">
+                ENTRYAXLEGROUP8WEIGHT = #{entryaxlegroup8weight},
+            </if>
+            <if test="entryaxlegroup9weight != null">
+                ENTRYAXLEGROUP9WEIGHT = #{entryaxlegroup9weight},
+            </if>
+            <if test="fareaxlegroups != null">
+                FAREAXLEGROUPS = #{fareaxlegroups},
+            </if>
+            <if test="discountfare != null">
+                DISCOUNTFARE = #{discountfare},
+            </if>
+            <if test="cpucardnetwork != null and cpucardnetwork != ''">
+                CPUCARDNETWORK = #{cpucardnetwork},
+            </if>
+            <if test="cpucardno != null and cpucardno != ''">
+                CPUCARDNO = #{cpucardno},
+            </if>
+            <if test="cpucardtype != null and cpucardtype != ''">
+                CPUCARDTYPE = #{cpucardtype},
+            </if>
+            <if test="flagstanum != null">
+                FLAGSTANUM = #{flagstanum},
+            </if>
+            <if test="flagsta != null and flagsta != ''">
+                FLAGSTA = #{flagsta},
+            </if>
+            <if test="byField1 != null">
+                BY_FIELD1 = #{byField1},
+            </if>
+            <if test="qrtransid != null and qrtransid != ''">
+                QRTRANSID = #{qrtransid},
+            </if>
+            <if test="qrpayfare != null and qrpayfare != ''">
+                QRPAYFARE = #{qrpayfare},
+            </if>
+            <if test="qrpaytype != null and qrpaytype != ''">
+                QRPAYTYPE = #{qrpaytype},
+            </if>
+            <if test="cflag1 != null and cflag1 != ''">
+                CFLAG1 = #{cflag1},
+            </if>
+            <if test="cflag2 != null and cflag2 != ''">
+                CFLAG2 = #{cflag2},
+            </if>
+            <if test="uploadflag != null and uploadflag != ''">
+                UPLOADFLAG = #{uploadflag},
+            </if>
+            <if test="cflag3 != null and cflag3 != ''">
+                CFLAG3 = #{cflag3},
+            </if>
+        </set>
+        where NETNO = #{netno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from XZTOLLSTATION.DATA_TRANSACTION where NETNO = #{netno}
+    </delete>
+
+</mapper>

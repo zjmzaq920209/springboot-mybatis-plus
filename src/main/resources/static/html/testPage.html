@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+
+    <div id="vue_det">
+        <h1>{{site}}</h1>
+        <h2>{{url}}</h2>
+        <h3>{{details()}}</h3>
+        <p v-if="screen">显示了</p>
+        <a v-bind:href="url"><地址></地址></a>
+        <a v-on:click="doSomething">??</a>
+        <a @click="doSomething">??</a>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#vue_det',
+            data: {
+                site: "菜鸟教程",
+                url: "www.runoob.com",
+                alexa: "10000",
+                screen: false
+            },
+            methods: {
+                details: function() {
+                    return  this.site + " - 学的不仅是技术，更是梦想！";
+                },
+                doSomething: function () {
+                    console.log("你点了一下");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
