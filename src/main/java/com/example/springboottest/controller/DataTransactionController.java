@@ -4,13 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.springboottest.entity.DataTransaction;
+import com.example.springboottest.send.FirstSender;
 import com.example.springboottest.service.DataTransactionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * (DataTransaction)表控制层
@@ -26,6 +29,9 @@ public class DataTransactionController {
      */
     @Resource
     private DataTransactionService dataTransactionService;
+
+    @Autowired
+    private FirstSender firstSender;
 
     /**
      * 通过主键查询单条数据
@@ -50,6 +56,12 @@ public class DataTransactionController {
         return dataTransactionService.selectDataTransactionPage(page, wrapper);
     }
 
+    @GetMapping("send")
+    public String send(String msg) {
+        String uuid = UUID.randomUUID().toString();
+        firstSender.send(uuid, msg);
+        return uuid;
+    }
 
 
 }

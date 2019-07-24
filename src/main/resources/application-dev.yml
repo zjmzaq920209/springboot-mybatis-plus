@@ -21,6 +21,15 @@ spring:
       validation-query: SELECT 1 FROM DUAL
 
 
+  # RabbitMQ配置
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: admin
+      password: admin
+      publisher-confirms: true
+      virtual-host: /
+
 
 
 
