@@ -30,11 +30,6 @@
             <scope>test</scope>
         </dependency>
         <!-- rabbitmq依赖 -->
-       <!-- <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>3.4.1</version>
-        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,8 +69,8 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
             <version>1.5.2.RELEASE</version>
         </dependency>
-    </dependencies>
 
+    </dependencies>
     <build>
         <finalName>springboottest</finalName>
         <plugins>
