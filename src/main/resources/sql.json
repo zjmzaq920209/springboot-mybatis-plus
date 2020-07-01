@@ -1,0 +1,4 @@
+{
+  "firstSql" : "select * from dual",
+  "secondSql" : "select t.* from dual"
+}

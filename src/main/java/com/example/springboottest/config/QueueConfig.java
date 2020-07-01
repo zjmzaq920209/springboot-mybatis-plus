@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 队列配置
  */
-@Configuration
+//@Configuration
 public class QueueConfig {
 
 

@@ -1,9 +1,12 @@
 spring:
 
+  application:
+    name: xj-center-report
+
   datasource:
-    username: root
-    password: 1234
-    url: jdbc:mysql://192.168.239.128:3306/test
+    username: md_dbbase
+    password: DbBase2019
+    url: jdbc:mysql://bj-cdb-bzs3kghm.sql.tencentcdb.com:63339/db_tollstation_dev?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
     driver-class-name: com.mysql.jdbc.Driver
     # 数据库连接池
     type: com.alibaba.druid.pool.DruidDataSource
@@ -37,6 +40,7 @@ spring:
     host: 192.168.239.128
     password: 1234
     port: 6379
+
 
 
 

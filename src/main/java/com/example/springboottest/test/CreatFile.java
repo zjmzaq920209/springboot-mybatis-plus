@@ -28,18 +28,18 @@ public class CreatFile {
     String basePath = "E:\\reportmanage\\test\\";
 
     //第一个文件;application.yml
-    File file1 = new File(basePath + "application.yml");
+    //File file1 = new File(basePath + "application.yml");
 
     //第二个文件;application-prod.yml
     String file2 = basePath + "application-prod.yml";
 
     //第三个文件;appsettings.Production.json
-    String file3 = basePath + "appsettings.Production.json";
+  //  String file3 = basePath + "appsettings.Production.json";
 
 
 
-    Files.lines(Paths.get(basePath + "stationId.txt")).forEach(line -> {
-      String[] split = line.split("-");// .trim()可以去掉首尾多余的空格
+    Files.lines(Paths.get(basePath + "stationIp.txt")).forEach(line -> {
+     String[] split = line.split("-");// .trim()可以去掉首尾多余的空格
 
       //mysql数据库地址
       String mysqlPath = split[0].trim();
@@ -47,18 +47,20 @@ public class CreatFile {
       //老站号
       String stationId = split[1].trim();
 
-      String oraclePath = split[2].trim();
+      /* String oraclePath = split[2].trim();*/
+
+     String dir = line.trim();
 
 
       //创建文件夹并返回文件夹路径
-     // String folder = creatFolder(stationId);
+      //String folder = creatFolder(stationId);
 
 
 
 
       //放入第一个文件
-      /*try {
-        copyFile(file1, new File(basePath + "\\" + stationId + "\\" + "application.yml"));
+     /* try {
+        copyFile(file1, new File(basePath + "\\" + dir + "\\" + "application.yml"));
       } catch (Exception e) {
         e.printStackTrace();
       }*/
@@ -68,11 +70,11 @@ public class CreatFile {
 
 
       //替换文件内容（1处）
-      /*try {
+      try {
         replacTextContent(file2,"$", mysqlPath,basePath + "\\" + stationId + "\\" + "application-prod.yml");
       } catch (IOException e) {
         e.printStackTrace();
-      }*/
+      }
 
 
 
@@ -80,11 +82,11 @@ public class CreatFile {
 
 
       //第三个配置文件替换
-      try {
+     /* try {
         replaceContent(file3,oraclePath,mysqlPath,stationId,basePath + "\\" + stationId + "\\" + "appsettings.Production.json");
       } catch (IOException e) {
         e.printStackTrace();
-      }
+      }*/
 
       //System.out.println(Arrays.toString(split));
       });
@@ -209,7 +211,8 @@ public class CreatFile {
     String line = null;
     while ( (line = bufIn.readLine()) != null) {
       // 替换每行中, 符合条件的字符串
-      line = line.replace("@", oraclePath);
+
+      line = line.replace("%", oraclePath);
       line = line.replace("$", mysqlPath);
       line = line.replace("!", stationId);
       // 将该行写入内存

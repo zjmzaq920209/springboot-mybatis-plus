@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
  * rabbitMQ配置
  */
 @Slf4j
-@Configuration
+//@Configuration
 public class RabbitMqConfig {
     /**
      * 消息交换器的名字

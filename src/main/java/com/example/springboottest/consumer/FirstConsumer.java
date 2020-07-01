@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * 消费者
  */
-@Component
+//@Component
 public class FirstConsumer {
 
     @RabbitListener(queues = {"first-queue","second-queue"})

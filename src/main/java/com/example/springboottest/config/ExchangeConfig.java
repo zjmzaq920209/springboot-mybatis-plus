@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 交换器配置
  */
-@Configuration
+//@Configuration
 public class ExchangeConfig {
 
     /**
