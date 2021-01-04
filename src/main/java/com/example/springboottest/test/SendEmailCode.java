@@ -76,8 +76,69 @@ public class SendEmailCode {
 
   }
 
+
+
+  public static void testCase(String str) {
+
+    String[] reasons = str.split("\\|");
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0;  i < reasons.length; i++) {
+      if(i>0 && i < reasons.length) {
+        sb.append("|");
+      }
+      switch (reasons[i]) {
+        case "11" : sb.append("车货总质量超限");
+          break;
+        case "12" : sb.append("外廊尺寸超限");
+          break;
+        case "13" : sb.append("货物非《目录》内");
+          break;
+        case "14" : sb.append("货物属深加工产品");
+          break;
+        case "15" : sb.append("货物冷冻发硬、腐烂、变质");
+          break;
+        case "16" : sb.append("未安装ETC");
+          break;
+        case "17" : sb.append("已安装ETC但入口未正常使用");
+          break;
+        case "18" : sb.append("未达核定载质量和车厢容积80%以上");
+          break;
+        case "19" : sb.append("混装非鲜活农产品");
+          break;
+        case "20" : sb.append("混装《目录》外鲜活农产品超20%");
+          break;
+        case "21" : sb.append("假冒绿通");
+          break;
+        case "31" : sb.append("《作业证》无效");
+          break;
+        case "32" : sb.append("《作业证》信息与实际不符");
+          break;
+        case "33" : sb.append("车货总质量超限");
+          break;
+        case "34" : sb.append("外廓尺寸超限");
+          break;
+        case "35" : sb.append("收割机未悬挂号牌");
+          break;
+        case "36" : sb.append("未安装ETC");
+          break;
+        case "37" : sb.append("已安装ETC但入口未正常使用");
+          break;
+        case "38" : sb.append("混装其他物品（必要配件除外）");
+          break;
+        default: sb.append("-");
+      }
+    }
+    System.out.println(sb.toString());
+  }
+
   public static void main(String[] args) {
-    sendEmail("455341405@qq.com","这是一段测试代码");
+
+    //sendEmail("455341405@qq.com","这是一段测试代码");
+
+    //String str = "11|13|18";
+    String str = "11";
+    testCase(str);
+
   }
 
 }
