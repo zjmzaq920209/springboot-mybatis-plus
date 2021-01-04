@@ -25,7 +25,9 @@ public class CreatFile {
 
   public static void main(String[] args) throws Exception {
 
-    String basePath = "E:\\reportmanage\\test\\";
+    String basePath = "E:\\test\\";
+
+
 
     //第一个文件;application.yml
     //File file1 = new File(basePath + "application.yml");
@@ -55,9 +57,6 @@ public class CreatFile {
       //创建文件夹并返回文件夹路径
       //String folder = creatFolder(stationId);
 
-
-
-
       //放入第一个文件
      /* try {
         copyFile(file1, new File(basePath + "\\" + dir + "\\" + "application.yml"));
@@ -66,20 +65,12 @@ public class CreatFile {
       }*/
 
 
-
-
-
       //替换文件内容（1处）
       try {
         replacTextContent(file2,"$", mysqlPath,basePath + "\\" + stationId + "\\" + "application-prod.yml");
       } catch (IOException e) {
         e.printStackTrace();
       }
-
-
-
-
-
 
       //第三个配置文件替换
      /* try {
@@ -90,16 +81,7 @@ public class CreatFile {
 
       //System.out.println(Arrays.toString(split));
       });
-
-
-
-
-
-
   }
-
-
-
 
 
   public static String creatFolder(String stationId) {
