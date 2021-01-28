@@ -27,7 +27,7 @@ public class RestTest {
   public void rtPostObject() throws Exception {
     RestTemplate restTemplate = new RestTemplate();
     String url1 = "http://10.165.77.31/api/traffic-info/entryWaste/queryEntryWastePage";
-    String url2 = "http://10.165.79.119/api/traffic-info/exitWaste/queryExitWastePage";
+    String url2 = "http://10.165.77.31/api/traffic-info/exitWaste/queryExitWastePage";
     String url3 = "http://10.165.79.119/api/traffic-info/gantryWaste/queryGantryWastePage";
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
@@ -40,13 +40,13 @@ public class RestTest {
     page.setSize("10");
 
     TestParam param = new TestParam();
-    param.setStartTime("2020-12-01 00:00:00");
-    param.setEndTime("2020-12-28 00:00:00");
+    param.setStartTime("2021-01-01 00:00:00");
+    param.setEndTime("2021-01-10 00:00:00");
     map.put("params",JSONObject.toJSON(param));
     map.put("page",JSONObject.toJSON(page));
 
     HttpEntity request = new HttpEntity(map, headers);
-    ResponseEntity<String> response = restTemplate.postForEntity( url1, request , String.class );
+    ResponseEntity<String> response = restTemplate.postForEntity( url2, request , String.class );
     if (response.getStatusCode().equals(HttpStatus.OK)) {
       String body = response.getBody();
       System.out.println(response.getBody());

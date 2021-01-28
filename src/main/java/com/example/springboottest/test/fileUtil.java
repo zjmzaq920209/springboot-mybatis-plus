@@ -36,8 +36,7 @@ public class fileUtil {
       System.out.println("输入'c'继续；'r'结束");
       String flag = scFlag.nextLine();
       if ("c".equals(flag)) {
-        System.out.println("程序继续");
-        generateFile();
+          generateFile();
       } else {
         System.out.println("===============================================");
         System.out.println("                    程序结束                    ");
@@ -200,6 +199,46 @@ public class fileUtil {
           System.out.println("{}处理" + mysqlPath + " " + stationId + "失败！");
           e.printStackTrace();
         }
+      });
+    } catch (IOException e) {
+      System.out.println("读取stationIp.txt文件失败！");
+      e.printStackTrace();
+    }
+  }
+
+
+  public static void copyFile2tar() {
+    String fileName = "";
+    String tarPath = "";
+    Scanner sc = new Scanner(System.in);
+    System.out.println(
+        "请输入要复制的配置文件编号：1-application.yml; 2-application-prod.yml; 3-appsettings.Production.json;");
+    System.out.println("请输入你的选择：");
+    int fileNameNo = sc.nextInt();
+
+    switch (fileNameNo){
+      case 1 : fileName = "application.yml"; break;
+      case 2 : fileName = "application-prod.yml"; break;
+      case 3 : fileName = "appsettings.Production.json"; break;
+      default:fileName = "";
+    }
+
+
+    try {
+      String finalFileName = fileName;
+      Files.lines(Paths.get(BASEPATH + "stationIp.txt")).forEach(line -> {
+            String[] split = line.split("-");// .trim()可以去掉首尾多余的空格
+            //mysql数据库地址
+            String mysqlPath = split[0].trim();
+            //6位老站号
+            String stationId = split[1].trim();
+        try {
+          copyFile(new File(BASEPATH + "\\" + stationId + finalFileName),new File(tarPath));
+        } catch (Exception e) {
+          System.out.println("复制失败");
+          e.printStackTrace();
+        }
+
       });
     } catch (IOException e) {
       System.out.println("读取stationIp.txt文件失败！");
