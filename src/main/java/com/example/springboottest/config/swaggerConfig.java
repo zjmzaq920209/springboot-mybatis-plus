@@ -23,7 +23,7 @@ public class swaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.springboottest.controlle"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.springboottest"))
                 .paths(PathSelectors.any())
                 .build();
     }

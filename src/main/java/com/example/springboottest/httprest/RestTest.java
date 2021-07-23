@@ -40,8 +40,11 @@ public class RestTest {
     page.setSize("10");
 
     TestParam param = new TestParam();
-    param.setStartTime("2021-01-01 00:00:00");
-    param.setEndTime("2021-01-10 00:00:00");
+    param.setStartTime("2021-04-06 00:00:00");
+    param.setEndTime("2021-04-07 00:00:00");
+    param.setPlateNum("鲁EA0009");
+    //param.setAutoAxisType("0");
+
     map.put("params",JSONObject.toJSON(param));
     map.put("page",JSONObject.toJSON(page));
 

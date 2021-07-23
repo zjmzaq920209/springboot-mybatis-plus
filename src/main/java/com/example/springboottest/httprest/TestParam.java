@@ -22,5 +22,6 @@ public class TestParam {
   String endTime;
   String cardId;
   String plateNum;
+  String autoAxisType;
 
 }
